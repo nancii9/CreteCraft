@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CreteCraft</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f9f9f9;
+            direction: rtl;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #444;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .item {
+            display: flex;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item img {
+            width: 150px;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .name {
+            font-weight: bold;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .price {
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .color-circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-circle.selected {
+            border-color: #e1306c;
+        }
+
+        .order-button {
+            background-color: #e1306c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .order-button:hover {
+            background-color: #c42a5c;
+        }
+
+        .stars {
+            cursor: pointer;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .stars .star.selected {
+            color: #FFD700;
+        }
+
+        .delivery-note {
+            margin-top: 8px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>منتجات الكونكريت</h1>
+
+    <div class="gallery">
+        <!-- منتج 1 -->
+        <div class="item">
+            <img src="images/item1.jpeg" alt="منتج 1">
+            <div class="details">
+                <p class="name">طقم ابيض لامع</p>
+                <p class="price">250 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'طقم ابيض لامع')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 2 -->
+        <div class="item">
+            <img src="images/item2.jpeg" alt="منتج 2">
+            <div class="details">
+                <p class="name">بومبونيره شمع</p>
+                <p class="price">120 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'بومبونيره شمع')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 3 -->
+        <div class="item">
+            <img src="images/item3.jpeg" alt="منتج 3">
+            <div class="details">
+                <p class="name">طقم اسود عشوائي صغير</p>
+                <p class="price">200 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'طقم اسود عشوائي صغير')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 4 -->
+        <div class="item">
+            <img src="images/item4.jpeg" alt="منتج 4">
+            <div class="details">
+                <p class="name">طقم اسود عشوائي كبير</p>
+                <p class="price">320 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'طقم اسود عشوائي كبير')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 5 -->
+        <div class="item">
+            <img src="images/item5.jpeg" alt="منتج 5">
+            <div class="details">
+                <p class="name">ديكور رمضاني</p>
+                <p class="price">260 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'ديكور رمضاني')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 6 -->
+        <div class="item">
+            <img src="images/item6.jpeg" alt="منتج 6">
+            <div class="details">
+                <p class="name">ابيض لامع مع جولد</p>
+                <p class="price">400 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'ابيض لامع مع جولد')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 7 -->
+        <div class="item">
+            <img src="images/item7.jpeg" alt="منتج 7">
+            <div class="details">
+                <p class="name">طقم رخامي بني</p>
+                <p class="price">230 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'طقم رخامي بني')">اطلب الآن</button>
+            </div>
+        </div>
+
+        <!-- منتج 8 -->
+        <div class="item">
+            <img src="images/item8.jpeg" alt="منتج 8">
+            <div class="details">
+                <p class="name">منظم اكسسوارات</p>
+                <p class="price">140 جنيه</p>
+                <div class="stars" data-rating="0">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-circle" data-color="أبيض" style="background-color: white;"></span>
+                    <span class="color-circle" data-color="أسود" style="background-color: black;"></span>
+                    <span class="color-circle" data-color="رمادي" style="background-color: gray;"></span>
+                    <span class="color-circle" data-color="بني" style="background-color: #8B4513;"></span>
+                </div>
+                <p class="delivery-note">نحن نوفر خدمة التوصيل سريعة وآمنة.<br>الوقت المتوقع للتوصيل من 2 إلى 4 أيام.
+                </p>
+                <button class="order-button" onclick="orderNow(this, 'منظم اكسسوارات')">اطلب الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //  اختيار اللون
+        document.querySelectorAll('.color-circle').forEach(circle => {
+            circle.addEventListener('click', function () {
+                const siblings = this.parentElement.querySelectorAll('.color-circle');
+                siblings.forEach(sib => sib.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        //  التقييم بالنجوم
+        document.querySelectorAll('.stars').forEach(starsContainer => {
+            const stars = starsContainer.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    stars.forEach((s, i) => {
+                        s.classList.toggle('selected', i <= index);
+                    });
+                    starsContainer.dataset.rating = index + 1;
+                });
+            });
+        });
+
+        // زر الطلب
+        function orderNow(button, productName) {
+            const selectedCircle = button.parentElement.querySelector('.color-circle.selected');
+            const color = selectedCircle ? selectedCircle.dataset.color : 'لم يتم اختيار لون';
+            const message = `مرحبًا، أود طلب المنتج: ${productName} بلون: ${color}.`;
+            navigator.clipboard.writeText(message).then(() => {
+                alert("تم نسخ رسالة الطلب. سيتم فتح صفحتنا على إنستجرام، افتح الرسائل والصق الرسالة.");
+                window.open("https://instagram.com/shhome_conceretart", "_blank");
+            });
+        }
+    </script>
+
+</body>
+
+</html>
